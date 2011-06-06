@@ -1,6 +1,9 @@
 set nocompatible
 set diffexpr=MyDiff()
 
+"Pathogen plugin makes uninstalling plugins easier
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 function MyDiff()
   let opt = '-a --binary '
@@ -41,9 +44,6 @@ set completeopt=longest,menuone,preview
 set autowrite
 set hidden
 set history=1000
-
-"Pathogen plugin makes uninstalling plugins easier
-call pathogen#runtime_append_all_bundles()
 
 " Snippetit toimimaan automaattisesti eri p‰‰tteille
 au BufNewFile,BufRead *.info set filetype=info
