@@ -1,4 +1,5 @@
 set nocompatible
+
 set diffexpr=MyDiff()
 
 "Pathogen plugin makes uninstalling plugins easier
