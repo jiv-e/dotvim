@@ -57,17 +57,6 @@ set history=1000
 au BufNewFile,BufRead *.info set filetype=info
 au BufNewFile,BufRead *.module set filetype=php
 
-
-"minubuexpl pluginin asetuksia katso: http://www.vim.org/scripts/script.php?script_id=159
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-
-"The % key will switch between opening and closing brackets. By sourcing matchit.vim, it can also switch among e.g. if/elsif/else/end, between opening and closing XML tags, and more.
-"Note: runtime is the same as source except that the path is relative to the Vim installation directory.
-runtime macros/matchit.vim
-
 "Mab leader to be , instead of \
 let mapleader = ","
 
@@ -134,11 +123,9 @@ nmap <leader>ev :e ~/.vimrc<cr>
 "Map escape key to jj -- much faster
 imap jj <esc>
 
+"Fuzzyfinder shortcuts
 nmap <Del> :FufBuffer<CR> 
-
-nmap <C-Del> :FufFile<CR> 
-
-nmap <S-Del> :NERDTree<CR> 
+nmap <S-Del> :FufFile<CR> 
 
 "Bubble single lines (kicks butt)
 "http://vimcasts.org/episodes/bubbling-text/
