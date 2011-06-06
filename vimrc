@@ -32,7 +32,15 @@ endfunction
 "Set font
 "set gfn=Lucida_Sans_Typewriter:h18:cANSI
 set guifont=Menlo\ Regular:h18
-colorscheme wombat
+"colorscheme wombat
+
+"Solarized colorscheme settings
+syntax enable
+set background=dark
+colorscheme solarized
+
+"Toggle solarized light/dark setting
+let g:solarized_menu=0
 
 filetype plugin on
 set wildmenu
