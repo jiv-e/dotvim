@@ -50,7 +50,6 @@ set history=1000
 " CSS:n automaattinen t‰ydennys
 " au FileType css set ofu=csscomplete#CompleteCSS
 
-
 " Snippetit toimimaan automaattisesti eri p‰‰tteille
 au BufNewFile,BufRead *.info set filetype=info
 au BufNewFile,BufRead *.module set filetype=php
@@ -126,9 +125,7 @@ map! <char-176> }
 map! <char-229> "
 
 "Insertmode edits and jumps
-inoremap <c-x> <bs> 
 inoremap <c-bs> <c-w>
-inoremap <c-d> <Right><bs>
 
 "map code completion to ctrl + tab
 imap <c-space> <c-x><c-o>
