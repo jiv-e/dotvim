@@ -134,7 +134,7 @@ imap <c-space> <c-x><c-o>
 imap <c-tab> <c-r><tab>
 
 "map path completion to tab
-inoremap <tab> <c-x><c-f>
+imap <tab> <c-x><c-f>
 
 "faster macro repeating
 nmap <space> @@
