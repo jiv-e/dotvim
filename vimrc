@@ -3,6 +3,13 @@
 
 set nocompatible
 
+"No backup files
+set nobackup
+set noswapfile
+
+"No beep
+"set noeb vb t_vb=
+
 "Share clipboard with OS X
 set clipboard=unnamed
 
@@ -17,6 +24,8 @@ set clipboard=unnamed
 "set nodigraph
 
 "Pathogen plugin makes uninstalling plugins easier
+runtime bundle/pathogen/autoload/pathogen.vim
+
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -47,6 +56,9 @@ set autowrite
 set hidden
 set history=1000
 
+set isfname-==
+set isfname-={,}
+
 " CSS:n automaattinen täydennys
 " au FileType css set ofu=csscomplete#CompleteCSS
 
@@ -56,6 +68,8 @@ au BufNewFile,BufRead *.module set filetype=php
 
 " Myös HTML-snippetit php-tiedostoille
 au BufNewFile,BufRead *.php set ft=php.html
+"Jquery syntax colors
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 
 "Mab leader to be , instead.view-display-id-attachment_1 of \
@@ -82,10 +96,10 @@ set number
 
 "indent stuff
 set expandtab
-set tabstop=2
+set softtabstop=2
 set shiftwidth=2
-set smartindent
-set autoindent
+"set smartindent
+"set autoindent
 
 "better line wrapping
 set wrap
@@ -115,14 +129,15 @@ set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 "see :help whichwrap.
 set ww+=<,>
 
+"Done with keyremap4macbook on system level
 "map ¨ to $
-map! <char-168> $
+" map! <char-168> $
 "map § to {
-map! <char-167> {
+" map! <char-167> {
 "map ° to }
-map! <char-176> }
+" map! <char-176> }
 "map å to "
-map! <char-229> "
+" map! <char-229> "
 
 "Insertmode edits and jumps
 inoremap <c-bs> <c-w>
@@ -134,15 +149,17 @@ imap <c-space> <c-x><c-o>
 imap <c-tab> <c-r><tab>
 
 "map path completion to tab
-imap <tab> <c-x><c-f>
+"imap <c-p> <c-x><c-f>
+"keyword completion
+"<c-n>
 
 "faster macro repeating
 nmap <space> @@
 
 "Arpeggio commands
 call arpeggio#load()
-Arpeggio inoremap jk <esc>`^
-Arpeggio inoremap fd <esc>`^
+Arpeggio map! jk <esc>`^
+Arpeggio map! fd <esc>`^
 
 "shortcut for editing  vimrc file in a new tab
 nmap <leader>ev :e ~/.vimrc<cr>
@@ -160,16 +177,18 @@ nmap <s-del> :fuffile<cr>
 
 "bubble single lines (kicks butt)
 "http://vimcasts.org/episodes/bubbling-text/
-nmap <d-k> ddkp
-nmap <d-j> ddp
-nmap <d-up> ddkp
-nmap <d-down> ddp
+nmap <c-k> ddkP
+nmap <c-j> ddp
+nmap <c-up> ddkP
+nmap <c-down> ddp
 
 "bubble multiple lines
-vmap <d-k> dkp`[v`]
-vmap <d-j> djp`[v`]
-vmap <d-up> dkp`[v`]
-vmap <d-down> djp`[v`]
+vmap <c-k> xkP`[V`]
+vmap <c-j> xp`[V`]
+vmap <c-up> xkp`[V`]
+vmap <c-down> xp`[V`]
+
+"Easier buffer changing
 nmap <c-tab> :bnext<cr>
 nmap <s-tab> :bprevious<cr>
 
