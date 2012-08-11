@@ -172,8 +172,8 @@ inoremap <esc> <esc>`^
 inoremap <c-c> <c-c>`^
 
 "fuzzyfinder shortcuts
-nmap <del> :fufbuffer<cr> 
-nmap <s-del> :fuffile<cr> 
+nmap <del> :FufBuffer<cr> 
+nmap <s-del> :FufFile<cr> 
 
 "bubble single lines (kicks butt)
 "http://vimcasts.org/episodes/bubbling-text/
